@@ -44,13 +44,16 @@ result = model.invoke("Hello, world!")
 If you're looking for more advanced customization or agent orchestration, check out [LangGraph](https://docs.langchain.com/oss/python/langgraph/overview), our framework for building controllable agent workflows.
 
 > [!TIP]
+> Building complex, long-horizon agents? Check out **[Deep Agents](https://github.com/langchain-ai/deepagents)** — a higher-level package built on LangChain for agents that can plan, use subagents, and leverage file systems for complex tasks.
+
+> [!TIP]
 > For developing, debugging, and deploying AI agents and LLM applications, see [LangSmith](https://docs.langchain.com/langsmith/home).
 
 ## LangChain ecosystem
 
 While the LangChain framework can be used standalone, it also integrates seamlessly with any LangChain product, giving developers a full suite of tools when building LLM applications.
 
-- **[Deep Agents](https://github.com/langchain-ai/deepagents)** — Build agents that can plan, use subagents, and leverage file systems for complex tasks
+- **[Deep Agents](https://github.com/langchain-ai/deepagents)** *(new!)* — Build agents that can plan, use subagents, and leverage file systems for complex tasks
 - **[LangGraph](https://docs.langchain.com/oss/python/langgraph/overview)** — Build agents that can reliably handle complex tasks with our low-level agent orchestration framework
 - **[Integrations](https://docs.langchain.com/oss/python/integrations/providers/overview)** — Chat & embedding models, tools & toolkits, and more
 - **[LangSmith](https://www.langchain.com/langsmith)** — Agent evals, observability, and debugging for LLM apps
