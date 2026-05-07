@@ -16,7 +16,7 @@ class TestHubPullDeprecation:
         mock_client.pull_prompt = MagicMock(return_value=MagicMock())
 
         with (
-            patch("langchain.hub.LangSmithClient", return_value=mock_client),
+            patch("langchain.hub._get_client", return_value=mock_client),
             warnings.catch_warnings(record=True) as w,
         ):
             warnings.simplefilter("always")
