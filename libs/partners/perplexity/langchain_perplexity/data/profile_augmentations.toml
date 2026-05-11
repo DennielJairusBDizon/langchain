@@ -11,3 +11,6 @@ audio_outputs = false
 video_outputs = false
 reasoning_output = true
 tool_calling = false
+
+[overrides."sonar-deep-research".input_mime_types]
+image = ["image/png", "image/jpeg", "image/gif", "image/webp"]

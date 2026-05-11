@@ -55,10 +55,29 @@ def _validate_data_dir(data_dir: Path) -> Path:
     return resolved
 
 
+def _profile_field_names() -> frozenset[str]:
+    """Return the set of keys declared on `ModelProfile`, or an empty set."""
+    try:
+        from langchain_core.language_models.model_profile import ModelProfile
+    except ImportError:
+        return frozenset()
+
+    try:
+        return frozenset(get_type_hints(ModelProfile).keys())
+    except (TypeError, NameError):
+        return frozenset()
+
+
 def _load_augmentations(
     data_dir: Path,
 ) -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
     """Load augmentations from `profile_augmentations.toml`.
+
+    Provider-level overrides are top-level keys under `[overrides]`. Model-level
+    overrides are keyed by model id under `[overrides."model-id"]`. Because TOML
+    subtables produce `dict` values, we distinguish the two by checking the key
+    against the declared `ModelProfile` field names. If `ModelProfile` cannot be
+    imported, we fall back to the legacy heuristic of "dict value ⇒ model id."
 
     Args:
         data_dir: Directory containing `profile_augmentations.toml`.
@@ -90,8 +109,26 @@ def _load_augmentations(
     provider_aug: dict[str, Any] = {}
     model_augs: dict[str, dict[str, Any]] = {}
 
+    profile_fields = _profile_field_names()
+
     for key, value in overrides.items():
-        if isinstance(value, dict):
+        if profile_fields:
+            # Schema-driven: known profile field names are provider-level; all
+            # other keys are treated as model identifiers (whose values must be
+            # dict overrides).
+            if key in profile_fields:
+                provider_aug[key] = value
+            elif isinstance(value, dict):
+                model_augs[key] = value
+            else:
+                msg = (
+                    f"Augmentation key '{key}' is not a declared ModelProfile "
+                    f"field and its value is not a table of overrides."
+                )
+                print(f"❌ {msg}", file=sys.stderr)
+                sys.exit(1)
+        # Legacy fallback when ModelProfile is unavailable.
+        elif isinstance(value, dict):
             model_augs[key] = value
         else:
             provider_aug[key] = value

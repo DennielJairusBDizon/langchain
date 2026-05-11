@@ -55,6 +55,14 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "tool_calling": False,
         "attachment": False,
         "temperature": False,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+        },
     },
     "sonar-pro": {
         "name": "Sonar Pro",

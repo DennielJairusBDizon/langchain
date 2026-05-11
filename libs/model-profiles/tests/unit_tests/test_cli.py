@@ -472,3 +472,133 @@ class TestWarnUndeclaredProfileKeys:
             side_effect=TypeError("broken"),
         ):
             _warn_undeclared_profile_keys(profiles)
+
+
+def test_refresh_merges_provider_level_mime_types(
+    tmp_path: Path, mock_models_dev_response: dict
+) -> None:
+    """Provider-level `input_mime_types` cascades to every model."""
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+
+    aug_file = data_dir / "profile_augmentations.toml"
+    aug_file.write_text(
+        """
+provider = "anthropic"
+
+[overrides]
+image_url_inputs = true
+
+[overrides.input_mime_types]
+image = ["image/png", "image/jpeg"]
+pdf = ["application/pdf"]
+"""
+    )
+
+    mock_response = Mock()
+    mock_response.json.return_value = mock_models_dev_response
+    mock_response.raise_for_status = Mock()
+
+    with (
+        patch("langchain_model_profiles.cli.httpx.get", return_value=mock_response),
+        patch("builtins.input", return_value="y"),
+    ):
+        refresh("anthropic", data_dir)
+
+    profiles_file = data_dir / "_profiles.py"
+    spec = importlib.util.spec_from_file_location("generated_mime", profiles_file)
+    assert spec
+    assert spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)  # type: ignore[union-attr]
+
+    for model_id in ("claude-3-opus", "claude-3-sonnet"):
+        profile = module._PROFILES[model_id]  # type: ignore[attr-defined]
+        assert profile["input_mime_types"] == {
+            "image": ["image/png", "image/jpeg"],
+            "pdf": ["application/pdf"],
+        }
+
+
+def test_refresh_model_level_mime_types_override_provider(
+    tmp_path: Path, mock_models_dev_response: dict
+) -> None:
+    """Model-level MIME-type overrides win over provider-level defaults."""
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+
+    aug_file = data_dir / "profile_augmentations.toml"
+    aug_file.write_text(
+        """
+provider = "anthropic"
+
+[overrides.input_mime_types]
+image = ["image/png"]
+
+[overrides."claude-3-opus".input_mime_types]
+image = ["image/png", "image/jpeg", "image/webp"]
+
+[overrides."claude-3-opus".output_mime_types]
+image = ["image/png"]
+"""
+    )
+
+    mock_response = Mock()
+    mock_response.json.return_value = mock_models_dev_response
+    mock_response.raise_for_status = Mock()
+
+    with (
+        patch("langchain_model_profiles.cli.httpx.get", return_value=mock_response),
+        patch("builtins.input", return_value="y"),
+    ):
+        refresh("anthropic", data_dir)
+
+    profiles_file = data_dir / "_profiles.py"
+    spec = importlib.util.spec_from_file_location(
+        "generated_mime_override", profiles_file
+    )
+    assert spec
+    assert spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)  # type: ignore[union-attr]
+
+    opus = module._PROFILES["claude-3-opus"]  # type: ignore[attr-defined]
+    sonnet = module._PROFILES["claude-3-sonnet"]  # type: ignore[attr-defined]
+
+    assert opus["input_mime_types"] == {
+        "image": ["image/png", "image/jpeg", "image/webp"]
+    }
+    assert opus["output_mime_types"] == {"image": ["image/png"]}
+    assert sonnet["input_mime_types"] == {"image": ["image/png"]}
+    assert "output_mime_types" not in sonnet
+
+
+def test_refresh_rejects_unknown_scalar_top_level_key(
+    tmp_path: Path, mock_models_dev_response: dict
+) -> None:
+    """Unknown scalar keys at the top level are no longer silently accepted."""
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+
+    aug_file = data_dir / "profile_augmentations.toml"
+    aug_file.write_text(
+        """
+provider = "anthropic"
+
+[overrides]
+not_a_real_field = "oops"
+"""
+    )
+
+    mock_response = Mock()
+    mock_response.json.return_value = mock_models_dev_response
+    mock_response.raise_for_status = Mock()
+
+    with (
+        patch("langchain_model_profiles.cli.httpx.get", return_value=mock_response),
+        patch("builtins.input", return_value="y"),
+        pytest.raises(SystemExit) as exc_info,
+    ):
+        refresh("anthropic", data_dir)
+
+    assert exc_info.value.code == 1

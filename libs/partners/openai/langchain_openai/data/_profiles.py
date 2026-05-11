@@ -40,6 +40,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-3.5-turbo": {
         "name": "GPT-3.5-turbo",
@@ -66,6 +77,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": False,
         "image_tool_message": False,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4": {
         "name": "GPT-4",
@@ -92,6 +114,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4-turbo": {
         "name": "GPT-4 Turbo",
@@ -118,6 +151,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4.1": {
         "name": "GPT-4.1",
@@ -144,6 +188,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4.1-mini": {
         "name": "GPT-4.1 mini",
@@ -170,6 +225,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4.1-nano": {
         "name": "GPT-4.1 nano",
@@ -196,6 +262,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4o": {
         "name": "GPT-4o",
@@ -222,6 +299,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4o-2024-05-13": {
         "name": "GPT-4o (2024-05-13)",
@@ -248,6 +336,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4o-2024-08-06": {
         "name": "GPT-4o (2024-08-06)",
@@ -274,6 +373,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4o-2024-11-20": {
         "name": "GPT-4o (2024-11-20)",
@@ -300,6 +410,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-4o-mini": {
         "name": "GPT-4o mini",
@@ -326,6 +447,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5": {
         "name": "GPT-5",
@@ -352,6 +484,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5-chat-latest": {
         "name": "GPT-5 Chat (latest)",
@@ -378,6 +521,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5-codex": {
         "name": "GPT-5-Codex",
@@ -404,6 +558,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5-mini": {
         "name": "GPT-5 Mini",
@@ -430,6 +595,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5-nano": {
         "name": "GPT-5 Nano",
@@ -456,6 +632,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5-pro": {
         "name": "GPT-5 Pro",
@@ -482,6 +669,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.1": {
         "name": "GPT-5.1",
@@ -508,6 +706,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.1-chat-latest": {
         "name": "GPT-5.1 Chat",
@@ -534,6 +743,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.1-codex": {
         "name": "GPT-5.1 Codex",
@@ -560,6 +780,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.1-codex-max": {
         "name": "GPT-5.1 Codex Max",
@@ -586,6 +817,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.1-codex-mini": {
         "name": "GPT-5.1 Codex mini",
@@ -612,6 +854,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.2": {
         "name": "GPT-5.2",
@@ -638,6 +891,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.2-chat-latest": {
         "name": "GPT-5.2 Chat",
@@ -664,6 +928,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.2-codex": {
         "name": "GPT-5.2 Codex",
@@ -690,6 +965,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.2-pro": {
         "name": "GPT-5.2 Pro",
@@ -716,6 +1002,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.3-chat-latest": {
         "name": "GPT-5.3 Chat (latest)",
@@ -742,6 +1039,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.3-codex": {
         "name": "GPT-5.3 Codex",
@@ -768,6 +1076,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.3-codex-spark": {
         "name": "GPT-5.3 Codex Spark",
@@ -794,6 +1113,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.4": {
         "name": "GPT-5.4",
@@ -820,6 +1150,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.4-mini": {
         "name": "GPT-5.4 mini",
@@ -846,6 +1187,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.4-nano": {
         "name": "GPT-5.4 nano",
@@ -872,6 +1224,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.4-pro": {
         "name": "GPT-5.4 Pro",
@@ -898,6 +1261,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.5": {
         "name": "GPT-5.5",
@@ -924,6 +1298,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-5.5-pro": {
         "name": "GPT-5.5 Pro",
@@ -950,6 +1335,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "gpt-image-1": {
         "name": "gpt-image-1",
@@ -975,6 +1371,24 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
+        "output_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+            ],
+        },
     },
     "gpt-image-1-mini": {
         "name": "gpt-image-1-mini",
@@ -1000,6 +1414,24 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
+        "output_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+            ],
+        },
     },
     "gpt-image-1.5": {
         "name": "gpt-image-1.5",
@@ -1025,6 +1457,24 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
+        "output_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/webp",
+            ],
+        },
     },
     "o1": {
         "name": "o1",
@@ -1051,6 +1501,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o1-mini": {
         "name": "o1-mini",
@@ -1077,6 +1538,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o1-preview": {
         "name": "o1-preview",
@@ -1102,6 +1574,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o1-pro": {
         "name": "o1-pro",
@@ -1128,6 +1611,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o3": {
         "name": "o3",
@@ -1154,6 +1648,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o3-deep-research": {
         "name": "o3-deep-research",
@@ -1179,6 +1684,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o3-mini": {
         "name": "o3-mini",
@@ -1205,6 +1721,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o3-pro": {
         "name": "o3-pro",
@@ -1231,6 +1758,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o4-mini": {
         "name": "o4-mini",
@@ -1257,6 +1795,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "o4-mini-deep-research": {
         "name": "o4-mini-deep-research",
@@ -1282,6 +1831,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "text-embedding-3-large": {
         "name": "text-embedding-3-large",
@@ -1307,6 +1867,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "text-embedding-3-small": {
         "name": "text-embedding-3-small",
@@ -1332,6 +1903,17 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
     "text-embedding-ada-002": {
         "name": "text-embedding-ada-002",
@@ -1357,5 +1939,16 @@ _PROFILES: dict[str, dict[str, Any]] = {
         "pdf_tool_message": True,
         "image_tool_message": True,
         "tool_choice": True,
+        "input_mime_types": {
+            "image": [
+                "image/png",
+                "image/jpeg",
+                "image/gif",
+                "image/webp",
+            ],
+            "pdf": [
+                "application/pdf",
+            ],
+        },
     },
 }

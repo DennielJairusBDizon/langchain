@@ -50,7 +50,6 @@ class ModelProfile(TypedDict, total=False):
 
     image_inputs: bool
     """Whether image inputs are supported."""
-    # TODO: add more detail about formats?
 
     image_url_inputs: bool
     """Whether [image URL inputs](https://docs.langchain.com/oss/python/langchain/models#multimodal)
@@ -59,17 +58,36 @@ class ModelProfile(TypedDict, total=False):
     pdf_inputs: bool
     """Whether [PDF inputs](https://docs.langchain.com/oss/python/langchain/models#multimodal)
     are supported."""
-    # TODO: add more detail about formats? e.g. bytes or base64
 
     audio_inputs: bool
     """Whether [audio inputs](https://docs.langchain.com/oss/python/langchain/models#multimodal)
     are supported."""
-    # TODO: add more detail about formats? e.g. bytes or base64
 
     video_inputs: bool
     """Whether [video inputs](https://docs.langchain.com/oss/python/langchain/models#multimodal)
     are supported."""
-    # TODO: add more detail about formats? e.g. bytes or base64
+
+    input_mime_types: dict[str, list[str]]
+    """MIME types accepted as input, grouped by modality.
+
+    Keys mirror the modality names used by [models.dev](https://models.dev) — for
+    example, `'image'`, `'audio'`, `'pdf'`, `'video'`. Values are lists of
+    [IANA media types](https://www.iana.org/assignments/media-types/) such as
+    `'image/png'` or `'audio/mpeg'`.
+
+    This field is *informational*: an entry means the provider is known to accept
+    that MIME type, but an empty or missing list does not necessarily mean a
+    type is rejected. Consumers that need hard validation should consult the
+    upstream provider's documentation.
+
+    Example:
+        ```python
+        {
+            "image": ["image/png", "image/jpeg", "image/gif", "image/webp"],
+            "pdf": ["application/pdf"],
+        }
+        ```
+    """
 
     image_tool_message: bool
     """Whether images can be included in tool messages."""
@@ -99,6 +117,25 @@ class ModelProfile(TypedDict, total=False):
     video_outputs: bool
     """Whether [video outputs](https://docs.langchain.com/oss/python/langchain/models#multimodal)
     are supported."""
+
+    output_mime_types: dict[str, list[str]]
+    """MIME types produced as output, grouped by modality.
+
+    Keys mirror the modality names used by [models.dev](https://models.dev) — for
+    example, `'image'`, `'audio'`, `'video'`. Values are lists of
+    [IANA media types](https://www.iana.org/assignments/media-types/) such as
+    `'image/png'` or `'audio/mpeg'`.
+
+    This field is *informational*: an entry means the provider is known to
+    return that MIME type, but absence does not imply a guarantee that no other
+    type can be returned. Consumers that need hard validation should consult the
+    upstream provider's documentation.
+
+    Example:
+        ```python
+        {"image": ["image/png"], "audio": ["audio/mpeg"]}
+        ```
+    """
 
     # --- Tool calling ---
     tool_calling: bool

@@ -7,11 +7,24 @@ pdf_tool_message = true
 image_tool_message = true
 tool_choice = true
 
+[overrides.input_mime_types]
+image = ["image/png", "image/jpeg", "image/gif", "image/webp"]
+pdf = ["application/pdf"]
+
 [overrides."gpt-3.5-turbo"]
 image_url_inputs = false
 pdf_inputs = false
 pdf_tool_message = false
 image_tool_message = false
+
+[overrides."gpt-image-1".output_mime_types]
+image = ["image/png", "image/jpeg", "image/webp"]
+
+[overrides."gpt-image-1-mini".output_mime_types]
+image = ["image/png", "image/jpeg", "image/webp"]
+
+[overrides."gpt-image-1.5".output_mime_types]
+image = ["image/png", "image/jpeg", "image/webp"]
 
 [overrides."gpt-5.1-codex"]
 max_input_tokens = 272000
